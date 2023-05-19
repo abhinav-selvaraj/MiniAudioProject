@@ -1,20 +1,21 @@
 #include "SongData.hpp"
 
-
 SongData::SongData(){
-    this->title = "";
-    this->duration = "";
-    this->type = "";
-    this->artist = "";
+    this->title = nullptr;
+    this->duration = nullptr;
+    this->type = nullptr;
+    this->artist = nullptr;
     this->path = nullptr;
 }
 
-SongData::SongData(string* p, int index){
-    this->title = "";
-    this->duration = "";
-    this->type = "";
-    this->artist = "";
-    this->path = p;
+SongData::SongData(string* path, int index, string title, string duration, string type, string artist){
+   
+    
+    this->title = new string(title);
+    this->duration =new string(duration);
+    this->type = new string(type);
+    this->artist = new string(artist);
+    this->path = path;
     this->index = index;
 }
 
@@ -30,3 +31,19 @@ string* SongData::getSongFilePath(){
     return this->path;
 }
 
+string* SongData::getArtist(){
+    return this->artist;
+}
+
+string* SongData::getSongTitle(){
+    return this->title;
+    
+}
+
+string* SongData::getPlayType(){
+    return this->type;
+}
+
+string* SongData::getDuration(){
+    return this->duration;
+}
